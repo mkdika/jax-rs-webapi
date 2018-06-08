@@ -1,4 +1,3 @@
-
 package com.mkdika.springbootjersey.person;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -9,11 +8,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 /**
  *
@@ -22,22 +22,28 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id") // to prevent Jackson recursion serialization
-public class Person implements Serializable{
-    
+public class Person implements Serializable {
+
     @Id
+    @GeneratedValue
     Integer id;
-    
+
     String name;
-    
+
     @Column(name = "birth_date")
     Date birthDate;
-    
-    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL, 
-              fetch = FetchType.EAGER, optional = false)
+
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER, optional = false)
     Address address;
-    
-    
+
+    public Person(String name, Date birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
+    }
+
 }
