@@ -1,5 +1,6 @@
-package com.mkdika.springbootjersey.person;
+package com.mkdika.springbootjersey.api.address;
 
+import com.mkdika.springbootjersey.api.person.Person;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,5 +35,5 @@ public class Address implements Serializable {
 
     @Column(name = "zip_code")
     String zipCode;
-
+    
 }

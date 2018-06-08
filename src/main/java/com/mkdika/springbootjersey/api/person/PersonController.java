@@ -1,4 +1,4 @@
-package com.mkdika.springbootjersey.person;
+package com.mkdika.springbootjersey.api.person;
 
 import java.util.List;
 import javax.ws.rs.Consumes;
@@ -25,13 +25,9 @@ public class PersonController {
 
     private final PersonRepository personRepository;
 
-    private final AddressRepository addressRepository;
-
     @Autowired
-    public PersonController(PersonRepository personRepository,
-            AddressRepository addressRepository) {
+    public PersonController(PersonRepository personRepository) {
         this.personRepository = personRepository;
-        this.addressRepository = addressRepository;
     }
 
     @GET
@@ -41,7 +37,7 @@ public class PersonController {
         if (list.size() > 0) {
             return Response.status(Response.Status.OK.getStatusCode()).entity(list).build();
         } else {
-            return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(list).build();
+            return Response.status(Response.Status.NO_CONTENT.getStatusCode()).build();
         }
     }
     
@@ -53,7 +49,7 @@ public class PersonController {
         if (list.size() > 0) {
             return Response.status(Response.Status.OK.getStatusCode()).entity(list).build();
         } else {
-            return Response.status(Response.Status.NO_CONTENT.getStatusCode()).entity(list).build();
+            return Response.status(Response.Status.NO_CONTENT.getStatusCode()).build();
         }
     }
 
@@ -65,7 +61,7 @@ public class PersonController {
         if (person != null) {
             return Response.status(Response.Status.OK.getStatusCode()).entity(person).build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).entity(person).build();
+            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).build();
         }
     }
 
@@ -78,7 +74,7 @@ public class PersonController {
             personRepository.delete(person);
             return Response.status(Response.Status.NO_CONTENT.getStatusCode()).build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).entity(person).build();
+            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).build();
         }
     }
 
@@ -107,7 +103,7 @@ public class PersonController {
             p = personRepository.save(person);
             return Response.status(Response.Status.OK.getStatusCode()).entity(p).build();
         } else {
-            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).entity(person).build();
+            return Response.status(Response.Status.NOT_FOUND.getStatusCode()).build();
         }
     }
 }

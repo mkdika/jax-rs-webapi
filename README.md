@@ -23,6 +23,11 @@ _coming soon..._
 
 ### Related Reference
 
+- [JAX-RS is just an API](http://www.baeldung.com/jax-rs-spec-and-implementations)
+- [JAX-RS Client with Jersey](http://www.baeldung.com/jersey-jax-rs-client)
+- [REST API with Jersey and Spring](http://www.baeldung.com/jersey-rest-api-with-spring)
+- [Spring Boot: Building Restful Web Services With Jersey](https://dzone.com/articles/spring-boot-building-restful-web-services-with-jersey)
+
 
 
 

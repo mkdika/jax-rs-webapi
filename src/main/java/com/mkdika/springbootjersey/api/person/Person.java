@@ -1,5 +1,6 @@
-package com.mkdika.springbootjersey.person;
+package com.mkdika.springbootjersey.api.person;
 
+import com.mkdika.springbootjersey.api.address.Address;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;

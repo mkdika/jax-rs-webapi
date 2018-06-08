@@ -1,5 +1,5 @@
 
-package com.mkdika.springbootjersey.person;
+package com.mkdika.springbootjersey.api.person;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;

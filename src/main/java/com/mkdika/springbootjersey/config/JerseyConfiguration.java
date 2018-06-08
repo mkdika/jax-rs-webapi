@@ -1,6 +1,7 @@
 package com.mkdika.springbootjersey.config;
 
-import com.mkdika.springbootjersey.person.PersonController;
+import com.mkdika.springbootjersey.api.address.AddressController;
+import com.mkdika.springbootjersey.api.person.PersonController;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -16,7 +17,8 @@ public class JerseyConfiguration extends ResourceConfig {
 
     @PostConstruct
     public void setUp() {
-        register(PersonController.class);       
+        register(PersonController.class); 
+        register(AddressController.class);
     }
 
 }
